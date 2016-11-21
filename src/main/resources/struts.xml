@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+ "http://struts.apache.org/dtds/struts-2.3.dtd">
+ <struts>
+ 	 <include file="login.xml"/>
+ 	
+ 	<package name="default" namespace="/" extends="struts-default">
+		<action name="">
+			<result>/login.jsp</result>
+		</action>
+ 	</package>
+ 	
+ 	<package name="tutorials" namespace="/tutorials" extends="struts-default">
+ 		<!-- <action name="search">
+ 			<result>/search.jsp</result>
+ 		</action>
+ 		<action name="add">
+ 			<result>/add.jsp</result>
+ 		</action>
+ 		<action name="update">
+ 			<result>/update.jsp</result>
+ 		</action>
+ 		<action name="delete">
+ 			<result>/delete.jsp</result>
+ 		</action> -->
+ 		
+ 		<!-- below is the wildcard action equivalent to above four entries -->
+ 		
+ 		<action name="*Form">
+ 			<result>/{1}.jsp</result>
+ 		</action>
+ 		
+ 		<!-- <action  name="searchTutorial" class="org.mnr.action.TutorialAction" method="searchTutorial">
+ 			<result name="success">/response.jsp</result>
+ 			<result name="input">/search.jsp</result>
+ 		</action>
+ 		<action  name="addTutorial" class="org.mnr.action.TutorialAction" method="addTutorial">
+ 			<result name="success">/response.jsp</result>
+ 			<result name="input">/search.jsp</result>
+ 		</action>
+ 		<action  name="updateTutorial" class="org.mnr.action.TutorialAction" method="updateTutorial">
+ 			<result name="success">/response.jsp</result>
+ 			<result name="input">/search.jsp</result>
+ 		</action>
+ 		<action  name="deleteTutorial" class="org.mnr.action.TutorialAction" method="deleteTutorial">
+ 			<result name="success">/response.jsp</result>
+ 			<result name="input">/search.jsp</result>
+ 		</action> -->
+ 		
+ 		<!-- below is the wildcard action equivalent to above four entries -->
+ 		 <action  name="*" class="org.mnr.action.TutorialAction" method="{1}">
+ 			<result name="success">/response.jsp</result>
+ 			<result name="input">/search.jsp</result>
+ 		</action>
+ 		
+ 	</package>
+ 	
+ 	<constant name="struts.dev" value="false"></constant>
+ 	
+ </struts>
